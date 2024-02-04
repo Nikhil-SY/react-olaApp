@@ -1,7 +1,13 @@
 .App {
   text-align: center;
+  
 }
-
+/* background-image: linear-gradient(to right,rgb(179, 179, 252),rgb(44, 112, 228)); */
+.log{
+  /* background-image: linear-gradient(to right,rgb(183, 170, 173),rgb(250, 76, 108)); */
+  background-image:url("./Assests/wallpaper3.jpg") ;
+  background-size: cover;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;

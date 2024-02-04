@@ -1,25 +1,43 @@
-import logo from './logo.svg';
+
 import './App.css';
+import NavBar from './components/Navbar';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Home from './components/Home';
+import Daily from './components/Daily';
+import Rental from './components/Rental';
+import Outstation from './components/Outstation';
+import { useState } from 'react';
+import Login from './components/Login';
+import { UseSelector, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
+import Ongoing from './components/Ongoing';
+// import Login from './components/Login';
 
 function App() {
-  return (
+ 
+  
+  const {show} = useSelector(state=>state.info)
+  
+  return (<div>
+    {show?(
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <BrowserRouter>
+    <Routes>
+    <Route path='/' element={<Home/>}>
+    <Route index element={<Daily/>}></Route>
+    <Route path='/rental' element={<Rental/>}></Route>
+    <Route path='/outstation' element={<Outstation/>}></Route>
+    <Route path='/ongoing' element={<Ongoing/>}></Route>
+    </Route>
+    </Routes>
+   </BrowserRouter>
+      
+    </div>):(
+      <div className='App'>
+      <Login/>
+      </div>
+    )}
+    </div> );
 }
 
 export default App;

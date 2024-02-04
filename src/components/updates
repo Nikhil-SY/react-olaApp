@@ -1,0 +1,3 @@
+new route for ongoing ride
+
+storing current location and destination location to the redux and showing that in ongoing ride
